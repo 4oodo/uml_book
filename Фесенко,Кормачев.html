@@ -6,17 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Глава 13: Начало работы с IBM Rational Rose 2002</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/css/css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/css/css/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/css/Navbar-Centered-Links-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #E8F0FE; /* Светло-синий фон */
+        }
+        header {
+            background: #1E90FF; /* Темно-синий */
+            color: white; /* Изменен цвет текста на белый */
+            padding: 20px 0; /* Увеличены отступы */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px; /* Увеличены отступы для контейнера */
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Убедитесь, что ничего не выходит за пределы */
+        }
+        h1, h2, h3 {
+            color: #003366; /* Темно-синий цвет для заголовков */
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        table {
+            margin: 20px 0;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px; /* Увеличены отступы в таблице */
+            text-align: left;
+        }
+        th {
+            background: #f2f2f2;
+        }
+        nav a {
+            margin-right: 15px;
+            color: #003366; /* Темно-синий цвет для ссылок */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+    </style>
 </head>
 
 <body>
     <nav class="bg-dark-subtle navbar navbar-expand-md sticky-top py-3">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span>Главная</span></a><button data-bs-toggle="collapse" data-bs-target="#navcol-3" class="navbar-toggler"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html"><span>Главная</span></a>
+            <button data-bs-toggle="collapse" data-bs-target="#navcol-3" class="navbar-toggler">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navcol-3">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="demenkovshirokov.html">Глава 2</a></li>
@@ -25,7 +82,6 @@
                     <li class="nav-item"><a class="nav-link" href="Воронин%20и%20Серов.html">Глава 7</a></li>
                     <li class="nav-item"><a class="nav-link" href="Фирюлин%20Даниил.html">Глава 12</a></li>
                     <li class="nav-item"><a class="nav-link" href="Фесенко,Кормачев.html">Глава 13</a></li>
-                    <li class="nav-item"></li>
                 </ul>
             </div>
         </div>
@@ -33,79 +89,44 @@
     <header>
         <h1>Глава 13: Начало работы над проектом в среде IBM Rational Rose 2002</h1>
     </header>
-    <nav><a href="#section1">13.1 Диаграмма вариантов использования</a><a href="#section2">13.2 Диаграмма классов</a><a href="#section3">13.3 Диаграмма кооперации</a><a href="#section4">13.4 Диаграмма последовательности</a></nav>
+    <nav class="container">
+        <a href="#section1">13.1 Диаграмма вариантов использования</a>
+        <a href="#section2">13.2 Диаграмма классов</a>
+        <a href="#section3">13.3 Диаграмма кооперации</a>
+        <a href="#section4">13.4 Диаграмма последовательности</a>
+    </nav>
     <div class="container">
         <div id="section1" class="subsection">
             <h2>13.1. Разработка диаграммы вариантов использования</h2>
-            <p> Проект начинается с анализа задачи и создания диаграммы вариантов использования. Например, для системы управления банкоматом можно использовать мастер типовых проектов или создать пустую диаграмму. В IBM Rational Rose можно настроить параметры среды. </p>
-            <p> Для разработки диаграммы вариантов использования необходимо активировать соответствующую диаграмму, добавлять актеров, варианты использования и ассоциации, а также управлять их свойствами. При добавлении элементов на диаграмму используется левой кнопкой мыши пиктограммы на специальной панели инструментов. </p>
+            <p>Проект начинается с анализа задачи и создания диаграммы вариантов использования. Например, для системы управления банкоматом можно использовать мастер типовых проектов или создать пустую диаграмму. В IBM Rational Rose можно настроить параметры среды.</p>
             <ul>
-                <li>Добавление актера: Нажмите на пиктограмму актера и разместите его на диаграмме. Имя можно изменить в свойствах.</li>
-                <li>Добавление варианта использования: Нажмите на пиктограмму варианта использования и разместите его на диаграмме.</li>
-                <li>Добавление ассоциации: Выберите пиктограмму ассоциации и проведите линию между актером и вариантом использования.</li>
-                <li>Добавление зависимости: Сначала добавьте варианты использования, затем выберите пиктограмму зависимости и соедините их.</li>
-                <li>Добавление текстового файла: Щелкните правой кнопкой на варианте использования, выберите "New → File", задайте имя файла и откройте его для редактирования.</li>
+                <li>Добавление актера: Нажмите на пиктограмму актера...</li>
+                <li>Добавление варианта использования: Нажмите на пиктограмму варианта использования...</li>
+                <li>Добавление ассоциации: Выберите пиктограмму ассоциации...</li>
             </ul>
             <div class="image-container"><img src="https://i.imgur.com/S9KdzB7.png" alt="Диаграмма вариантов использования"></div>
         </div>
         <div id="section2" class="subsection">
             <h2>13.2. Разработка диаграммы классов</h2>
-            <p> Диаграмма классов представляет логическую модель системы. Для её создания активируем рабочее окно, добавляем классы, атрибуты и операции. </p>
-            <ul>
-                <li>Добавление класса: Нажмите на пиктограмму класса и разместите его на диаграмме.</li>
-                <li>Добавление атрибутов и операций: Используйте контекстные меню для добавления атрибутов и операций к классам. Задаются их типы и видимость.</li>
-                <li>Добавление отношений: Выбираются типы отношений (ассоциации, зависимости), которые добавляются путем выбора соответствующих пиктограмм.</li>
-            </ul>
-            <div class="image-container"><img src="https://i.imgur.com/qE3qWfM.png" alt="Диаграмма классов">
-                <p class="caption">Диаграмма классов, демонстрирующая структуру системы с основными классами: Пользователь, Товар и Заказ.</p>
-            </div>
-            <ul>
-                <li><strong>Пользователь</strong>: включает информацию о пользователе, такую как имя и email, а также методы для входа и выхода из системы.</li>
-                <li><strong>Товар</strong>: представляет товар с его названием и ценой, а также методом для добавления товара в корзину.</li>
-                <li><strong>Заказ</strong>: включает дату заказа и список товаров, с методом для добавления товаров в заказ.</li>
-            </ul>
+            <p>Диаграмма классов представляет логическую модель системы. Для её создания активируем рабочее окно...</p>
+            <div class="image-container"><img src="https://i.imgur.com/qE3qWfM.png" alt="Диаграмма классов"></div>
         </div>
         <div id="section3" class="subsection">
             <h2>13.3. Разработка диаграммы кооперации</h2>
-            <p> Диаграмма кооперации описывает динамику взаимодействия объектов. Она может быть создана вручную или с использованием существующей диаграммы классов. </p>
-            <ul>
-                <li>Добавление объекта: Перетащите класс из браузера на диаграмму.</li>
-                <li>Добавление связи и сообщений: Используйте пиктограммы для создания связей и отправки сообщений между объектами.</li>
-            </ul>
-            <div class="image-container"><img src="https://i.imgur.com/axy524f.png" alt="Диаграмма кооперации">
-                <p class="caption">Диаграмма кооперации, показывающая взаимодействие между классами Пользователь, Банкомат и Счет.</p>
-            </div>
-            <ul>
-                <li><strong>Пользователь</strong>: пользователь системы, который инициирует использование банкомата.</li>
-                <li><strong>Банкомат</strong>: отвечает за взаимодействие с пользователем, запрос и возврат данных.</li>
-                <li><strong>Счет</strong>: представляет финансовый счет пользователя и обеспечивает доступ к информации о балансе.</li>
-            </ul>
+            <p>Диаграмма кооперации описывает динамику взаимодействия объектов...</p>
+            <div class="image-container"><img src="https://i.imgur.com/axy524f.png" alt="Диаграмма кооперации"></div>
         </div>
         <div id="section4" class="subsection">
             <h2>13.4. Разработка диаграммы последовательности</h2>
-            <p> Диаграмма последовательности также визуализирует взаимодействие объектов и может быть создана автоматически из диаграммы кооперации. </p>
-            <ul>
-                <li>Добавление объектов и сообщений: Мы можем добавлять объекты и сообщения, используя панели инструментов. Сообщения получают нумерацию по умолчанию, но это можно отключить.</li>
-            </ul>
-            <div class="image-container"><img src="https://i.imgur.com/gkJNSXU.png" alt="Диаграмма последовательности">
-                <p class="caption">Диаграмма последовательности, описывающая процесс запроса наличных пользователем через банкомат.</p>
-            </div>
-            <ul>
-                <li><strong>Пользователь</strong>: инициирует процесс запроса наличных, взаимодействуя с банкоматом.</li>
-                <li><strong>Банкомат</strong>: получает запрос на выдачу наличных и проверяет баланс через счет пользователя.</li>
-                <li><strong>Счет</strong>: отвечает на запрос о балансе и возвращает его банкомату, который затем выдает деньги пользователю.</li>
-            </ul>
-            <p> В конце работы важно сохранить проект, используя меню "File". </p>
+            <p>Диаграмма последовательности также визуализирует взаимодействие объектов...</p>
+            <div class="image-container"><img src="https://i.imgur.com/gkJNSXU.png" alt="Диаграмма последовательности"></div>
+            <p>В конце работы важно сохранить проект, используя меню "File".</p>
         </div>
     </div>
     <footer>
         <p>© 2024 - Учебный проект по теме UML-диаграмм</p>
     </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/js/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/js/js/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/js/js/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
