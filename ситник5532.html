@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html data-bs-theme="light" lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Диаграммы компонентов и развертывания</title>
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
-    </script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles-1.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -66,81 +65,89 @@
         }
     </style>
 </head>
+
 <body>
-
-<h1>10.1.2. Виды компонентов</h1>
-
-<h2>Диаграмма компонентов системы управления банкоматом</h2>
-<div class="diagram">
-    <div class="image-container">
-        <img src="https://i.imgur.com/q8Mr5jW.png" alt="Диаграмма компонентов банкомата">
-        <p class="caption">Диаграмма компонентов системы управления банкоматом, показывающая основные элементы и их связи.</p>
+    <nav class="navbar navbar-expand-md sticky-top bg-dark-subtle py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span>Главная</span></a><button data-bs-toggle="collapse" data-bs-target="#navcol-3" class="navbar-toggler"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-center" id="navcol-3">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="demenkovshirokov.html">Глава 2.2-2.3&nbsp;</a><a class="nav-link text-center" href="Воронин%20и%20Серов%20версия%202%20(7%20глава).html">Глава 7</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Ласкин%20Лурье%20v2.html">Глава 3</a><a class="nav-link" href="Воронин%20и%20Серов%20версия%202%20(8.1%20подглава%20).html">Глава 8.1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Мержиевский,%20Шмеркин.html">Глава 4-4.8</a><a class="nav-link" href="Белоусов%20и%20Ворго%20оригинал.html">Глава 9-10.5</a></li>
+                    <li class="nav-item"><a class="nav-link" href="хтмл%2051-523.html">Глава 5.1-5.2.2</a><a class="nav-link" href="ситник5532.html">Глава 10.1.2-10.5</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="Фирюлин%20Даниил%202%20план.html">Глава 12</a><a class="nav-link" href="Фесенко,Кормачев.html">Глава 13</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1>10.1.2. Виды компонентов</h1>
+    <h2>Диаграмма компонентов системы управления банкоматом</h2>
+    <div class="diagram">
+        <div class="image-container"><img src="https://i.imgur.com/q8Mr5jW.png" alt="Диаграмма компонентов банкомата">
+            <p class="caption">Диаграмма компонентов системы управления банкоматом, показывающая основные элементы и их связи.</p>
+        </div>
     </div>
-</div>
-
-<h3>Пояснения:</h3>
-<ul>
-    <li><strong>MainATM</strong>: основной исполняемый файл, который управляет банкоматом.</li>
-    <li><strong>Transactions</strong>: исходный код для обработки транзакций.</li>
-    <li><strong>MainBank</strong>: исполняемый файл, который включает функциональность для авторизации.</li>
-    <li><strong>IAuthorise</strong>: интерфейс, который предоставляет методы для проверки.</li>
-    <li><strong>Клиенты</strong>: таблица базы данных, хранящая данные клиентов.</li>
-</ul>
-
-<h2>10.2. Интерфейсы</h2>
-<div class="diagram">
-    <div class="image-container">
-        <img src="https://i.imgur.com/8sUc2a7.png" alt="Интерфейс ITransaction">
-        <p class="caption">Интерфейс ITransaction, который описывает методы для работы с транзакциями. Класс Transactions реализует данный интерфейс.</p>
-    </div>
-    <h3>Пояснения и детали интерфейса ITransaction:</h3>
+    <h3>Пояснения:</h3>
     <ul>
-        <li><strong>ДобавитьТранзакцию()</strong>: метод, который отвечает за добавление новой транзакции в систему.</li>
-        <li><strong>ПолучитьДеталиТранзакции()</strong>: метод для получения информации о конкретной транзакции по её идентификатору. Это позволяет отследить статус и детали транзакции.</li>
+        <li><strong>MainATM</strong>: основной исполняемый файл, который управляет банкоматом.</li>
+        <li><strong>Transactions</strong>: исходный код для обработки транзакций.</li>
+        <li><strong>MainBank</strong>: исполняемый файл, который включает функциональность для авторизации.</li>
+        <li><strong>IAuthorise</strong>: интерфейс, который предоставляет методы для проверки.</li>
+        <li><strong>Клиенты</strong>: таблица базы данных, хранящая данные клиентов.</li>
     </ul>
-</div>
-
-<h2>10.3. Зависимости</h2>
-<div class="diagram">
-    <div class="image-container">
-        <img src="https://i.imgur.com/k5eQSlO.png" alt="Зависимости между компонентами">
-        <p class="caption">Диаграмма, показывающая зависимости между компонентами. MainATM использует библиотеку Dialog и взаимодействует с таблицей БазаДанных.</p>
+    <h2>10.2. Интерфейсы</h2>
+    <div class="diagram">
+        <div class="image-container"><img src="https://i.imgur.com/8sUc2a7.png" alt="Интерфейс ITransaction">
+            <p class="caption">Интерфейс ITransaction, который описывает методы для работы с транзакциями. Класс Transactions реализует данный интерфейс.</p>
+        </div>
+        <h3>Пояснения и детали интерфейса ITransaction:</h3>
+        <ul>
+            <li><strong>ДобавитьТранзакцию()</strong>: метод, который отвечает за добавление новой транзакции в систему.</li>
+            <li><strong>ПолучитьДеталиТранзакции()</strong>: метод для получения информации о конкретной транзакции по её идентификатору. Это позволяет отследить статус и детали транзакции.</li>
+        </ul>
     </div>
-
-    <h3>Пояснения и детали зависимостей:</h3>
-    <ul>
-        <li><strong>MainATM</strong>: основной компонент, который взаимодействует с пользователем, отвечая за все пользовательские интерфейсы и управление процессами.</li>
-        <li><strong>Dialog</strong>: библиотека, которая может содержать функции для взаимодействия с пользователем (например, отображение запросов). MainATM использует методы из этой библиотеки для отображения интерфейсов.</li>
-        <li><strong>БазаДанных</strong>: компонент, который хранит информацию о клиентах и транзакциях. MainATM взаимодействует с этим компонентом для получения и сохранения данных.</li>
-    </ul>
-</div>
-
-<h2>10.4. Пример диаграммы развертывания</h2>
-<div class="diagram">
-    <div class="image-container">
-        <img src="https://cf.ppt-online.org/files/slide/p/ptUDMinR9Cg4O7ejLGKkmvQlP6HsEZ8WX2zfub/slide-10.jpg" alt="Диаграмма развертывания">
-        <p class="caption">Диаграмма развертывания, показывающая физическую структуру системы и размещение компонентов.</p>
+    <h2>10.3. Зависимости</h2>
+    <div class="diagram">
+        <div class="image-container"><img src="https://i.imgur.com/k5eQSlO.png" alt="Зависимости между компонентами">
+            <p class="caption">Диаграмма, показывающая зависимости между компонентами. MainATM использует библиотеку Dialog и взаимодействует с таблицей БазаДанных.</p>
+        </div>
+        <h3>Пояснения и детали зависимостей:</h3>
+        <ul>
+            <li><strong>MainATM</strong>: основной компонент, который взаимодействует с пользователем, отвечая за все пользовательские интерфейсы и управление процессами.</li>
+            <li><strong>Dialog</strong>: библиотека, которая может содержать функции для взаимодействия с пользователем (например, отображение запросов). MainATM использует методы из этой библиотеки для отображения интерфейсов.</li>
+            <li><strong>БазаДанных</strong>: компонент, который хранит информацию о клиентах и транзакциях. MainATM взаимодействует с этим компонентом для получения и сохранения данных.</li>
+        </ul>
     </div>
-    <h3>Пояснения и детали диаграммы развертывания:</h3>
-    <ul>
-        <li><strong>СерверБанка</strong>: узел, на котором находятся компоненты, отвечающие за авторизацию и обработку транзакций.</li>
-        <li><strong>УдаленныйТерминал</strong>: место, где установлен банкомат, обеспечивающий пользователям доступ к банковским услугам.</li>
-        <li><strong>Защищенное соединение</strong>: обозначает использование безопасных протоколов для обмена данными между банкоматом и сервером, что критически важно для сохранения конфиденциальности и защиты информации клиентов.</li>
-    </ul>
-</div>
-
-<h2>10.5. Рекомендации по построению диаграммы компонентов</h2>
-<div class="diagram">
-    <div class="image-container">
-        <img src="https://www.evkova.org/evkovaupload/job/156377/6.jpg" alt="Рекомендации по построению диаграммы компонентов">
-        <p class="caption">Рекомендации по построению диаграммы компонентов, показывающие основные шаги и аспекты.</p>
+    <h2>10.4. Пример диаграммы развертывания</h2>
+    <div class="diagram">
+        <div class="image-container"><img src="https://cf.ppt-online.org/files/slide/p/ptUDMinR9Cg4O7ejLGKkmvQlP6HsEZ8WX2zfub/slide-10.jpg" alt="Диаграмма развертывания">
+            <p class="caption">Диаграмма развертывания, показывающая физическую структуру системы и размещение компонентов.</p>
+        </div>
+        <h3>Пояснения и детали диаграммы развертывания:</h3>
+        <ul>
+            <li><strong>СерверБанка</strong>: узел, на котором находятся компоненты, отвечающие за авторизацию и обработку транзакций.</li>
+            <li><strong>УдаленныйТерминал</strong>: место, где установлен банкомат, обеспечивающий пользователям доступ к банковским услугам.</li>
+            <li><strong>Защищенное соединение</strong>: обозначает использование безопасных протоколов для обмена данными между банкоматом и сервером, что критически важно для сохранения конфиденциальности и защиты информации клиентов.</li>
+        </ul>
     </div>
-    <ul>
-        <li>Следует начать с выбора вычислительных платформ и языков программирования.</li>
-        <li>Рассмотрите возможность вынесения большей части кода в динамические библиотеки для облегчения структуры.</li>
-        <li>Установите взаимосвязи и зависимости между компонентами.</li>
-    </ul>
-</div>
-
+    <h2>10.5. Рекомендации по построению диаграммы компонентов</h2>
+    <div class="diagram">
+        <div class="image-container"><img src="https://www.evkova.org/evkovaupload/job/156377/6.jpg" alt="Рекомендации по построению диаграммы компонентов">
+            <p class="caption">Рекомендации по построению диаграммы компонентов, показывающие основные шаги и аспекты.</p>
+        </div>
+        <ul>
+            <li>Следует начать с выбора вычислительных платформ и языков программирования.</li>
+            <li>Рассмотрите возможность вынесения большей части кода в динамические библиотеки для облегчения структуры.</li>
+            <li>Установите взаимосвязи и зависимости между компонентами.</li>
+        </ul>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>

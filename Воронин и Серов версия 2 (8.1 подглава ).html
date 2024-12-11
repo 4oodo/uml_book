@@ -1,10 +1,91 @@
-<html>
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
 <head>
-<body>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Глава 8. Диаграмма последовательности</title>
-<style>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles-1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #FFEFD5;
+        }
+        header {
+            background:  #FFEFD5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        table {
+            margin: 20px 0;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background: #f2f2f2;
+        }
+        .button {
+            background-color: #f5f5dc; /* Бежевый цвет */
+            color: #000; /* Цвет текста */
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md sticky-top bg-dark-subtle py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span>Главная</span></a><button data-bs-toggle="collapse" data-bs-target="#navcol-3" class="navbar-toggler"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-center" id="navcol-3">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="demenkovshirokov.html">Глава 2.2-2.3&nbsp;</a><a class="nav-link text-center" href="Воронин%20и%20Серов%20версия%202%20(7%20глава).html">Глава 7</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Ласкин%20Лурье%20v2.html">Глава 3</a><a class="nav-link" href="Воронин%20и%20Серов%20версия%202%20(8.1%20подглава%20).html">Глава 8.1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Мержиевский,%20Шмеркин.html">Глава 4-4.8</a><a class="nav-link" href="Белоусов%20и%20Ворго%20оригинал.html">Глава 9-10.5</a></li>
+                    <li class="nav-item"><a class="nav-link" href="хтмл%2051-523.html">Глава 5.1-5.2.2</a><a class="nav-link" href="ситник5532.html">Глава 10.1.2-10.5</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="Фирюлин%20Даниил%202%20план.html">Глава 12</a><a class="nav-link" href="Фесенко,Кормачев.html">Глава 13</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav><title>Глава 8. Диаграмма последовательности</title><style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -61,29 +142,19 @@
             font-size: 16px;
             border-radius: 5px;
 </style>
-</head>
-<body>
+    <header>
+        <h1>Глава 8. Диаграмма последовательности</h1>
+    </header>
+    <div class="container">
+        <p>Диаграмма последовательности в UML служит для моделирования взаимодействий между объектами во времени. Важной чертой систем является их взаимодействие, которое отличает их от простых совокупностей элементов. Обмен информацией между объектами осуществляется через сообщения, что соответствует принципам объектно-ориентированного анализа и проектирования (ООАП).</p>
+        <h2>8.1. Объекты</h2>
+        <p>На диаграмме изображаются только те объекты, которые участвуют во взаимодействии. Каждый объект представлен прямоугольником с именем и классом, разделенными двоеточием. Линия жизни объекта — пунктирная вертикальная линия, показывающая период его существования. Уничтожение объекта обозначается символом "X". Объекты могут создаваться по мере необходимости, и их создание отображается в соответствующем месте на временной оси.</p>
+        <h2>8.1.1 Фокус контроля</h2>
+        <p>Фокус управления (focus of control) изображается узким прямоугольником, показывающим активные периоды объекта. Периоды активности могут чередоваться с периодами ожидания. Взаимодействие может быть инициировано актором — внешним пользователем, который изображается первым слева на диаграмме. Рекурсивное взаимодействие обозначается небольшим прямоугольником, прикреплённым к фокусу управления объекта.</p><img src="https://i.imgur.com/BSJUJsW.jpeg" alt="Линия жизни объекта">
+        <h2>Заключение</h2>
+        <p>Диаграммы последовательности являются важным инструментом в UML для визуализации взаимодействий между объектами во времени. Они позволяют детально отразить динамику обмена сообщениями, что способствует лучшему пониманию процессов, происходящих в системе. Благодаря использованию графических элементов, таких как линии жизни, фокусы управления и сообщения, разработчики и аналитики могут эффективно моделировать сложные сценарии взаимодействия.</p><a href="Воронин%20и%20Серов%20версия%202%20(7%20глава).html" class="button">Предыдущая страница</a><a href=".html" class="button">Следующая страница</a>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-</html>
-<header>
-    <h1>Глава 8. Диаграмма последовательности</h1>
-</header>
 
-<div class="container">
-    <p>Диаграмма последовательности в UML служит для моделирования взаимодействий между объектами во времени. Важной чертой систем является их взаимодействие, которое отличает их от простых совокупностей элементов. Обмен информацией между объектами осуществляется через сообщения, что соответствует принципам объектно-ориентированного анализа и проектирования (ООАП).</p>
-
-    <h2>8.1. Объекты</h2>
-    <p>На диаграмме изображаются только те объекты, которые участвуют во взаимодействии. Каждый объект представлен прямоугольником с именем и классом, разделенными двоеточием. Линия жизни объекта — пунктирная вертикальная линия, показывающая период его существования. Уничтожение объекта обозначается символом "X". Объекты могут создаваться по мере необходимости, и их создание отображается в соответствующем месте на временной оси.</p>
-    <center></center>
-
-    <h2>8.1.1 Фокус контроля</h2>
-    <p>Фокус управления (focus of control) изображается узким прямоугольником, показывающим активные периоды объекта. Периоды активности могут чередоваться с периодами ожидания. Взаимодействие может быть инициировано актором — внешним пользователем, который изображается первым слева на диаграмме. Рекурсивное взаимодействие обозначается небольшим прямоугольником, прикреплённым к фокусу управления объекта.</p>
-     <center><img src="https://i.imgur.com/BSJUJsW.jpeg" alt="Линия жизни объекта"></center>
-    <h2>Заключение</h2>
-    <p>Диаграммы последовательности являются важным инструментом в UML для визуализации взаимодействий между объектами во времени. Они позволяют детально отразить динамику обмена сообщениями, что способствует лучшему пониманию процессов, происходящих в системе. Благодаря использованию графических элементов, таких как линии жизни, фокусы управления и сообщения, разработчики и аналитики могут эффективно моделировать сложные сценарии взаимодействия.</p>
-    <center> <a href="Воронин и Серов версия 2 (7 глава).html" class="button">Предыдущая страница</a> </center>
-    <center> <a href=".html" class="button">Следующая страница</a> </center>
-</div>
-
-</body>
 </html>
